@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7pgkfsu7bdbs"]
+
+[ext_resource type="Script" uid="uid://bcbge57ong2le" path="res://scenes/entity/player.gd" id="1_1obkj"]
+
+[node name="Player" type="Node3D"]
+script = ExtResource("1_1obkj")
+
+[node name="Camera" type="Camera3D" parent="."]
+fov = 90.0
+
+[node name="FrontRay" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -1.5)
+
+[node name="BackRay" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, 1.5)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_energy = 0.25
