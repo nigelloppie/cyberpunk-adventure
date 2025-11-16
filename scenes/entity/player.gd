@@ -26,3 +26,12 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_action_pressed("right"):
 		tween = create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 		tween.tween_property(self, "transform:basis", transform.basis.rotated(Vector3.UP, -PI / 2), TRAVEL_TIME)
+		
+func _ready() -> void:
+	SaveData.load()
+	var player_data = SaveData.data.get("player")
+	if player_data:
+		global_position = str_to_var(player_data["position"])
+		global_rotation = str_to_var(player_data["rotation"])
+	GameManager.player = self
+	

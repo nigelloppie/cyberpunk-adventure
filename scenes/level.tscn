@@ -1,19 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://bliudn767o2ed"]
+[gd_scene load_steps=8 format=3 uid="uid://bliudn767o2ed"]
 
 [ext_resource type="PackedScene" uid="uid://b7pgkfsu7bdbs" path="res://scenes/entity/player.tscn" id="1_mx8sn"]
+[ext_resource type="Script" uid="uid://8lmmglmnkebo" path="res://scenes/level.gd" id="1_ppgk2"]
 [ext_resource type="Script" uid="uid://bngdxwju8lqs6" path="res://addons/level_block/level_block_node.gd" id="2_ppgk2"]
 [ext_resource type="Material" uid="uid://c71yladfjhgud" path="res://addons/level_block/default_material.tres" id="3_2r41h"]
 [ext_resource type="Texture2D" uid="uid://dul4gcwu55m0b" path="res://addons/level_block/example_tileset.png" id="4_klq6b"]
+[ext_resource type="Script" uid="uid://c4e7lk14gb7ot" path="res://scenes/door_1.gd" id="6_2r41h"]
 
 [sub_resource type="Environment" id="Environment_b121j"]
 
 [node name="Level" type="Node3D"]
+script = ExtResource("1_ppgk2")
 
 [node name="Player" parent="." instance=ExtResource("1_mx8sn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 
 [node name="Blocks" type="Node3D" parent="."]
-visible = false
 
 [node name="LevelBlock" type="Node3D" parent="Blocks"]
 script = ExtResource("2_ppgk2")
@@ -118,7 +120,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2)
 script = ExtResource("2_ppgk2")
 material = ExtResource("3_2r41h")
 texture_sheet = ExtResource("4_klq6b")
-east_face = 0
+east_face = 4
 top_face = 5
 bottom_face = 4
 metadata/_custom_type_script = "uid://bngdxwju8lqs6"
@@ -145,15 +147,6 @@ top_face = 5
 bottom_face = 4
 metadata/_custom_type_script = "uid://bngdxwju8lqs6"
 
-[node name="LevelBlock14" type="Node3D" parent="Blocks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 2)
-script = ExtResource("2_ppgk2")
-material = ExtResource("3_2r41h")
-texture_sheet = ExtResource("4_klq6b")
-top_face = 5
-bottom_face = 4
-metadata/_custom_type_script = "uid://bngdxwju8lqs6"
-
 [node name="LevelBlock15" type="Node3D" parent="Blocks"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
 script = ExtResource("2_ppgk2")
@@ -161,17 +154,6 @@ material = ExtResource("3_2r41h")
 texture_sheet = ExtResource("4_klq6b")
 south_face = 0
 west_face = 0
-top_face = 5
-bottom_face = 4
-metadata/_custom_type_script = "uid://bngdxwju8lqs6"
-
-[node name="LevelBlock16" type="Node3D" parent="Blocks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 2)
-script = ExtResource("2_ppgk2")
-material = ExtResource("3_2r41h")
-texture_sheet = ExtResource("4_klq6b")
-north_face = 0
-south_face = 0
 top_face = 5
 bottom_face = 4
 metadata/_custom_type_script = "uid://bngdxwju8lqs6"
@@ -338,6 +320,17 @@ top_face = 5
 bottom_face = 4
 metadata/_custom_type_script = "uid://bngdxwju8lqs6"
 
+[node name="LevelBlock14" type="Node3D" parent="Blocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 2)
+script = ExtResource("2_ppgk2")
+material = ExtResource("3_2r41h")
+texture_sheet = ExtResource("4_klq6b")
+north_face = 0
+south_face = 0
+top_face = 5
+bottom_face = 4
+metadata/_custom_type_script = "uid://bngdxwju8lqs6"
+
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2)
 
@@ -346,3 +339,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, -1, 1)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_b121j")
+
+[node name="Doors" type="Node3D" parent="."]
+
+[node name="Door1" type="Node3D" parent="Doors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 2)
+script = ExtResource("6_2r41h")
+material = ExtResource("3_2r41h")
+texture_sheet = ExtResource("4_klq6b")
+west_face = 3
+top_face = 5
+bottom_face = 4
+metadata/_custom_type_script = "uid://bngdxwju8lqs6"
