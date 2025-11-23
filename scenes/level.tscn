@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bliudn767o2ed"]
+[gd_scene load_steps=10 format=3 uid="uid://bliudn767o2ed"]
 
 [ext_resource type="PackedScene" uid="uid://b7pgkfsu7bdbs" path="res://scenes/entity/player.tscn" id="1_mx8sn"]
 [ext_resource type="Script" uid="uid://8lmmglmnkebo" path="res://scenes/level.gd" id="1_ppgk2"]
@@ -6,6 +6,8 @@
 [ext_resource type="Material" uid="uid://c71yladfjhgud" path="res://addons/level_block/default_material.tres" id="3_2r41h"]
 [ext_resource type="Texture2D" uid="uid://dul4gcwu55m0b" path="res://addons/level_block/example_tileset.png" id="4_klq6b"]
 [ext_resource type="Script" uid="uid://c4e7lk14gb7ot" path="res://scenes/door_1.gd" id="6_2r41h"]
+[ext_resource type="Script" uid="uid://bl6l7tfvalic2" path="res://scenes/lights_out_menu.gd" id="7_klq6b"]
+[ext_resource type="PackedScene" uid="uid://c7dvq3mno885g" path="res://scenes/tile_button.tscn" id="8_b121j"]
 
 [sub_resource type="Environment" id="Environment_b121j"]
 
@@ -351,3 +353,39 @@ west_face = 3
 top_face = 5
 bottom_face = 4
 metadata/_custom_type_script = "uid://bngdxwju8lqs6"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LightsOutMenu" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("7_klq6b")
+tile_scene = ExtResource("8_b121j")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/LightsOutMenu"]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+layout_mode = 0
+offset_left = 340.0
+offset_top = 67.0
+offset_right = 840.0
+offset_bottom = 567.0
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/LightsOutMenu"]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/LightsOutMenu/CenterContainer"]
+layout_mode = 2
+columns = 3
