@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bliudn767o2ed"]
+[gd_scene load_steps=13 format=3 uid="uid://bliudn767o2ed"]
 
 [ext_resource type="PackedScene" uid="uid://b7pgkfsu7bdbs" path="res://scenes/entity/player.tscn" id="1_mx8sn"]
 [ext_resource type="Script" uid="uid://8lmmglmnkebo" path="res://scenes/level.gd" id="1_ppgk2"]
@@ -8,8 +8,21 @@
 [ext_resource type="Script" uid="uid://c4e7lk14gb7ot" path="res://scenes/door_1.gd" id="6_2r41h"]
 [ext_resource type="Script" uid="uid://bl6l7tfvalic2" path="res://scenes/lights_out_menu.gd" id="7_klq6b"]
 [ext_resource type="PackedScene" uid="uid://c7dvq3mno885g" path="res://scenes/tile_button.tscn" id="8_b121j"]
+[ext_resource type="Texture2D" uid="uid://bou7wboi2dvrf" path="res://textures/tilesets/prototype_tileset_2.0.png" id="9_8c41q"]
 
 [sub_resource type="Environment" id="Environment_b121j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_olg7q"]
+specular_mode = 2
+albedo_texture = ExtResource("9_8c41q")
+metallic_specular = 0.0
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1rx8"]
+specular_mode = 2
+albedo_texture = ExtResource("9_8c41q")
+metallic_specular = 0.0
+texture_filter = 0
 
 [node name="Level" type="Node3D"]
 script = ExtResource("1_ppgk2")
@@ -18,6 +31,7 @@ script = ExtResource("1_ppgk2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 
 [node name="Blocks" type="Node3D" parent="."]
+visible = false
 
 [node name="LevelBlock" type="Node3D" parent="Blocks"]
 script = ExtResource("2_ppgk2")
@@ -389,3 +403,258 @@ grow_vertical = 2
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/LightsOutMenu/CenterContainer"]
 layout_mode = 2
 columns = 3
+
+[node name="room1" type="Node3D" parent="."]
+
+[node name="LevelBlock10" type="Node3D" parent="room1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 17)
+script = ExtResource("2_ppgk2")
+material = SubResource("StandardMaterial3D_olg7q")
+texture_sheet = ExtResource("9_8c41q")
+east_face = 8
+south_face = 1
+top_face = 0
+bottom_face = 0
+metadata/_custom_type_script = "uid://bngdxwju8lqs6"
+
+[node name="LevelBlock11" type="Node3D" parent="room1"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2, 0, 15)
+script = ExtResource("2_ppgk2")
+material = SubResource("StandardMaterial3D_olg7q")
+texture_sheet = ExtResource("9_8c41q")
+east_face = 3
+south_face = 0
+top_face = 0
+bottom_face = 0
+metadata/_custom_type_script = "uid://bngdxwju8lqs6"
+
+[node name="LevelBlock12" type="Node3D" parent="room1"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4, 0, 15)
+script = ExtResource("2_ppgk2")
+material = SubResource("StandardMaterial3D_olg7q")
+texture_sheet = ExtResource("9_8c41q")
+east_face = 5
+south_face = 6
+top_face = 0
+bottom_face = 0
+metadata/_custom_type_script = "uid://bngdxwju8lqs6"
+
+[node name="LevelBlock13" type="Node3D" parent="room1"]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 2, 0, 17)
+script = ExtResource("2_ppgk2")
+material = SubResource("StandardMaterial3D_olg7q")
+texture_sheet = ExtResource("9_8c41q")
+east_face = 0
+top_face = 0
+bottom_face = 0
+metadata/_custom_type_script = "uid://bngdxwju8lqs6"
+
+[node name="LevelBlock19" type="Node3D" parent="room1"]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -1.9999998, 0, 17)
+script = ExtResource("2_ppgk2")
+material = SubResource("StandardMaterial3D_olg7q")
+texture_sheet = ExtResource("9_8c41q")
+west_face = 4
+top_face = 0
+bottom_face = 0
+metadata/_custom_type_script = "uid://bngdxwju8lqs6"
+
+[node name="LevelBlock20" type="Node3D" parent="room1"]
+transform = Transform3D(-2.1855695e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855695e-07, 2.3841858e-07, 0, 17)
+script = ExtResource("2_ppgk2")
+material = SubResource("StandardMaterial3D_olg7q")
+texture_sheet = ExtResource("9_8c41q")
+east_face = 2
+west_face = 0
+top_face = 0
+bottom_face = 0
+metadata/_custom_type_script = "uid://bngdxwju8lqs6"
+
+[node name="LevelBlock29" type="Node3D" parent="room1"]
+transform = Transform3D(-2.1855695e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855695e-07, -3.9999998, 0, 17)
+script = ExtResource("2_ppgk2")
+material = SubResource("StandardMaterial3D_olg7q")
+texture_sheet = ExtResource("9_8c41q")
+east_face = 0
+west_face = 0
+top_face = 0
+bottom_face = 0
+metadata/_custom_type_script = "uid://bngdxwju8lqs6"
+
+[node name="LevelBlock37" type="Node3D" parent="room1"]
+transform = Transform3D(-1, 0, -2.6226834e-07, 0, 1, 0, 2.6226834e-07, 0, -1, -6, 0, 19)
+script = ExtResource("2_ppgk2")
+material = SubResource("StandardMaterial3D_olg7q")
+texture_sheet = ExtResource("9_8c41q")
+north_face = 8
+east_face = 0
+west_face = 0
+top_face = 0
+bottom_face = 0
+metadata/_custom_type_script = "uid://bngdxwju8lqs6"
+
+[node name="LevelBlock36" type="Node3D" parent="room1"]
+transform = Transform3D(-2.1855695e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855695e-07, -6, 0, 17)
+script = ExtResource("2_ppgk2")
+material = SubResource("StandardMaterial3D_olg7q")
+texture_sheet = ExtResource("9_8c41q")
+north_face = 3
+east_face = 0
+top_face = 0
+bottom_face = 0
+metadata/_custom_type_script = "uid://bngdxwju8lqs6"
+
+[node name="LevelBlock30" type="Node3D" parent="room1"]
+transform = Transform3D(-1, 0, -2.6226834e-07, 0, 1, 0, 2.6226834e-07, 0, -1, -6, 0, 21)
+script = ExtResource("2_ppgk2")
+material = SubResource("StandardMaterial3D_olg7q")
+texture_sheet = ExtResource("9_8c41q")
+south_face = 8
+top_face = 0
+bottom_face = 0
+metadata/_custom_type_script = "uid://bngdxwju8lqs6"
+
+[node name="LevelBlock31" type="Node3D" parent="room1"]
+transform = Transform3D(-1, 0, -2.6226834e-07, 0, 1, 0, 2.6226834e-07, 0, -1, -8, 0, 21)
+script = ExtResource("2_ppgk2")
+material = SubResource("StandardMaterial3D_olg7q")
+texture_sheet = ExtResource("9_8c41q")
+east_face = 0
+south_face = 0
+top_face = 0
+bottom_face = 0
+metadata/_custom_type_script = "uid://bngdxwju8lqs6"
+
+[node name="LevelBlock32" type="Node3D" parent="room1"]
+transform = Transform3D(-1, 0, -2.6226834e-07, 0, 1, 0, 2.6226834e-07, 0, -1, -6, 0, 23)
+script = ExtResource("2_ppgk2")
+material = SubResource("StandardMaterial3D_olg7q")
+texture_sheet = ExtResource("9_8c41q")
+north_face = 0
+top_face = 0
+bottom_face = 0
+metadata/_custom_type_script = "uid://bngdxwju8lqs6"
+
+[node name="LevelBlock33" type="Node3D" parent="room1"]
+transform = Transform3D(-1, 0, -2.6226834e-07, 0, 1, 0, 2.6226834e-07, 0, -1, -8, 0, 23)
+script = ExtResource("2_ppgk2")
+material = SubResource("StandardMaterial3D_olg7q")
+texture_sheet = ExtResource("9_8c41q")
+north_face = 3
+east_face = 0
+top_face = 0
+bottom_face = 0
+metadata/_custom_type_script = "uid://bngdxwju8lqs6"
+
+[node name="LevelBlock34" type="Node3D" parent="room1"]
+transform = Transform3D(3.0597974e-07, 0, -1, 0, 1, 0, 1, 0, 3.0597974e-07, -4, 0, 21)
+script = ExtResource("2_ppgk2")
+material = SubResource("StandardMaterial3D_olg7q")
+texture_sheet = ExtResource("9_8c41q")
+north_face = 5
+west_face = 7
+top_face = 0
+bottom_face = 0
+metadata/_custom_type_script = "uid://bngdxwju8lqs6"
+
+[node name="LevelBlock35" type="Node3D" parent="room1"]
+transform = Transform3D(3.0597974e-07, 0, -1, 0, 1, 0, 1, 0, 3.0597974e-07, -4, 0, 23)
+script = ExtResource("2_ppgk2")
+material = SubResource("StandardMaterial3D_olg7q")
+texture_sheet = ExtResource("9_8c41q")
+north_face = 0
+east_face = 0
+top_face = 0
+bottom_face = 0
+metadata/_custom_type_script = "uid://bngdxwju8lqs6"
+
+[node name="LevelBlock28" type="Node3D" parent="room1"]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -1.9999998, 0, 19)
+script = ExtResource("2_ppgk2")
+material = SubResource("StandardMaterial3D_olg7q")
+texture_sheet = ExtResource("9_8c41q")
+east_face = 0
+west_face = 0
+top_face = 0
+bottom_face = 0
+metadata/_custom_type_script = "uid://bngdxwju8lqs6"
+
+[node name="LevelBlock22" type="Node3D" parent="room1"]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -1.9999998, 0, 21)
+script = ExtResource("2_ppgk2")
+material = SubResource("StandardMaterial3D_olg7q")
+texture_sheet = ExtResource("9_8c41q")
+east_face = 0
+west_face = 0
+top_face = 0
+bottom_face = 0
+metadata/_custom_type_script = "uid://bngdxwju8lqs6"
+
+[node name="LevelBlock23" type="Node3D" parent="room1"]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -1.9999998, 0, 23)
+script = ExtResource("2_ppgk2")
+material = SubResource("StandardMaterial3D_olg7q")
+texture_sheet = ExtResource("9_8c41q")
+east_face = 0
+west_face = 0
+top_face = 0
+bottom_face = 0
+metadata/_custom_type_script = "uid://bngdxwju8lqs6"
+
+[node name="LevelBlock24" type="Node3D" parent="room1"]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -1.9999998, 0, 25)
+script = ExtResource("2_ppgk2")
+material = SubResource("StandardMaterial3D_olg7q")
+texture_sheet = ExtResource("9_8c41q")
+east_face = 3
+west_face = 3
+top_face = 0
+bottom_face = 0
+metadata/_custom_type_script = "uid://bngdxwju8lqs6"
+
+[node name="LevelBlock25" type="Node3D" parent="room1"]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -1.9999998, 0, 27)
+script = ExtResource("2_ppgk2")
+material = SubResource("StandardMaterial3D_olg7q")
+texture_sheet = ExtResource("9_8c41q")
+east_face = 0
+west_face = 0
+top_face = 0
+bottom_face = 0
+metadata/_custom_type_script = "uid://bngdxwju8lqs6"
+
+[node name="LevelBlock26" type="Node3D" parent="room1"]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -1.9999998, 0, 29)
+script = ExtResource("2_ppgk2")
+material = SubResource("StandardMaterial3D_olg7q")
+texture_sheet = ExtResource("9_8c41q")
+east_face = 0
+west_face = 0
+top_face = 0
+bottom_face = 0
+metadata/_custom_type_script = "uid://bngdxwju8lqs6"
+
+[node name="LevelBlock27" type="Node3D" parent="room1"]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -1.9999998, 0, 31)
+script = ExtResource("2_ppgk2")
+material = SubResource("StandardMaterial3D_olg7q")
+texture_sheet = ExtResource("9_8c41q")
+east_face = 0
+south_face = 8
+west_face = 0
+top_face = 0
+bottom_face = 0
+metadata/_custom_type_script = "uid://bngdxwju8lqs6"
+
+[node name="room2" type="Node3D" parent="."]
+
+[node name="LevelBlock10" type="Node3D" parent="room2"]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 8, 0, 17)
+script = ExtResource("2_ppgk2")
+material = SubResource("StandardMaterial3D_t1rx8")
+texture_sheet = ExtResource("9_8c41q")
+east_face = 8
+south_face = 1
+top_face = 0
+bottom_face = 0
+metadata/_custom_type_script = "uid://bngdxwju8lqs6"
