@@ -6,11 +6,6 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("f5"):
 		save()
 		
-	if event.is_action_pressed("f1"):
-		door_1.west_face = -1
-		SaveData.mark_action_done("door_1_unlocked")
-		save()
-		
 	if event.is_action_pressed("f2"):
 		if SaveData.load():
 			reload_scene_with_save()
